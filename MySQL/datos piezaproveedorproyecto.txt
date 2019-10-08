@@ -1,0 +1,67 @@
+create table pieza(
+pieza int,
+nombre varchar(15),
+color varchar(15),
+peso int,
+ciudad varchar(15),
+primary key (pieza)
+);
+
+create table proveedor(
+prov int,
+nombre varchar(15),
+status int,
+ciudad varchar(15),
+primary key (prov)
+);
+
+create table proyecto(
+proyecto int,
+nombre varchar(20),
+ciudad varchar(15),
+primary key (proyecto)
+);
+
+create table suministro(
+prov int,
+pieza int,
+proyecto int,
+cantidad int,
+primary key (prov,pieza,proyecto),
+foreign key (prov) references proveedor(prov),
+foreign key (pieza) references pieza(pieza),
+foreign key (proyecto) references proyecto(proyecto)
+);
+
+insert into pieza values
+(1,'tuerca','rojo',15,'paris'),
+(2,'tornillo','azul',15,'londres'),
+(3,'martillo','negro',100,'roma'),
+(4,'punzon','rojo',60,'madrid'),
+(5,'clavo','rojo',10,'londres');
+
+insert into proveedor values
+(1,'lopez',20,'londres'),
+(2,'jimenez',30,'paris'),
+(3,'perez',25,'londres'),
+(4,'martinez',80,'madrid'),
+(5,'torres',15,'roma');
+
+insert into proyecto values
+(1,'construccion','londres'),
+(2,'programacion','londres'),
+(3,'carpinteria','roma'),
+(4,'techos','paris'),
+(5,'construccion','madrid'),
+(6,'programacion','madrid');
+
+insert into suministro values
+(1,1,1,350),
+(2,5,5,225),
+(3,2,2,1000),
+(4,3,3,250),
+(5,4,4,150),
+(1,2,1,120),
+(2,3,4,110),
+(2,2,1,111),
+(3,1,6,121);

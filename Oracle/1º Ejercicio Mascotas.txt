@@ -1,0 +1,57 @@
+CREATE TABLE mascotas(nombre VARCHAR2(20), propietario VARCHAR2(20), especie VARCHAR2(20), sexo CHAR(1), nacimiento NVARCHAR2(10), 
+fallecimento NVARCHAR2(10));
+
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Fluffy','Arnoldo','Gato','f','1999-02-04',null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Mau', 'Juan', 'Gato', 'm', '1998-03-17', null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Buffy', 'Arnoldo', 'Perro', 'f', '1999-05-13', null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('FanFan', 'Benito', 'Perro', 'm', '2000-02-09', null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Kaiser', 'Diana', 'Perro', 'm', '1998-08-31', '1997-07-29');
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Chispa', 'Omar', 'Ave', 'f', '1998-09-11', null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Wicho', 'Tomas', 'Ave', null, '2000-02-09', null);
+insert into mascotas (nombre, propietario, especie, sexo, nacimiento, fallecimento) values ('Skim', 'Benito', 'Serpiente', 'm', '2001-04-29', null);
+
+SELECT * FROM MASCOTAS;
+
+ 
+
+/*Ejercicios:*/
+
+/*1.- Cambia la fecha de nacimiento de Kaiser a 1989-08-31*/
+
+/*2.- Deseamos verificar el cambio que hicimos a la fecha de nacimiento de Kaiser*/
+
+/*3.- Deseamos conocer qué mascotas nacieron después del 2000.*/
+
+/*4.- Deseamos conocer los nombres y los propietarios de las perras.*/
+
+/*5.- Deseamos conocer los nombres y los propietarios de las perras y las gatas.*/
+
+/*6.- Deseamos conocer la fecha de nacimiento de nuestras mascotas.*/
+
+/*7.- Conocer quién tiene alguna mascota.*/
+
+/*8.- Obtener la fecha de nacimiento de los perros y los gatos.*/
+
+/*9.- Nombre de las mascotas ordenadas por fecha de nacimiento*/
+
+/*10.- Nombre de las mascotas ordenadas por fecha de nacimiento en orden inverso.*/
+
+/*11.- Nombre de las mascotas ordenadas por especie y fecha de nacimiento en orden inverso.*/
+
+/*12.- Nombre de las mascotas cuyo cumpleaños es el próximo mes.*/
+
+/*13.- Nombre de las mascotas que empiezan por B.*/
+
+/*14.- Nombre de las mascotas que terminan por fy.*/
+
+/*15.- Deseamos conocer cuántas mascotas tiene cada uno de los propietarios.*/
+
+/*16.- El número de animales por especie.*/
+
+/*17.- El número de animales por sexo.*/
+
+/*18.- El número de animales por combinación de especie y sexo.*/
+
+/*19.- Modifica la consulta anterior, para ver únicamente los datos de perros y gatos.*/
+
+/*20.- Lista de las mascotas que han fallecido.*/

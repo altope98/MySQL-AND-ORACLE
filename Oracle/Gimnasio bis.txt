@@ -1,0 +1,129 @@
+create table Tienen (
+Numero int,
+Codigo int,
+primary key (Numero,Codigo),
+foreign key (Numero) references Salas(Numero),
+foreign key (Codigo) references Aparatos(Codigo)
+);
+
+
+create table Monitor (
+DNI int,
+Nombre varchar(20),
+Telefono varchar(9),
+Titulacion varchar(10),
+primary key (DNI)
+);
+
+create table Socio(
+DNI int,
+Nombre varchar(20),
+Direccion varchar(20),
+Telefono varchar(9),
+primary key (DNI)
+);
+
+create table Aparatos (
+Codigo int,
+Descripcion varchar(10),
+Estado varchar(10),
+primary key (Codigo)
+);
+
+create table Salas (
+Numero int,
+Superficie int(2),
+Ubicacion varchar(10),
+Tipo varchar(6),
+primary key (Numero)
+);
+
+create table Clases (
+Codigo int,
+Descripcion varchar(10),
+DiaHora time,
+primary key (Codigo)
+);
+
+create table Tienen (
+Numero int,
+Codigo int,
+primary key (Numero,Codigo),
+foreign key (Numero) references Salas(Numero),
+foreign key (Codigo) references Aparatos(Codigo)
+);
+
+create table Se_Imparten (
+Numero int,
+Codigo int,
+primary key (Numero,Codigo),
+foreign key (Numero) references Salas(Numero),
+foreign key (Codigo) references Clases(Codigo)
+);
+
+create table Son_Impartidas (
+Codigo int,
+DNI int,
+primary key (Codigo,DNI)
+);
+
+create table Asisten (
+DNI int,
+Codigo int,
+primary key (DNI,Codigo),
+foreign key (DNI) references Socio (DNI),
+foreign key (Codigo) references Clases (Codigo)
+);
+
+insert into Monitor values
+(11,'Jose García','953333333','INEF'),
+(22,'Ana Gil','963333334','INEF'),
+(33,'Ana Martín','953333335','F.P.'),
+(44,'Pepe Pérez','953333336','IEF');
+
+update Monitor set Titulacion='INEF' where Titulacion='IEF';
+
+insert into Socio values
+(1,'Manolo Arcos','Libertad','95311111'),
+(2,'Jose Rodríguez','Trinidad','95322222'),
+(3,'Patricia Jiménez','Ancha','95322222'),
+(4,'Soledad Martínez','Rastro','95322222'),
+(5,'Inmaculada Pérez','Cava','95322222'),
+(6,'Nicolás Ortega','Nueva','95322222'),
+(7,'Federico Noriega','Trinidad,'95322222'),
+(8,'Rodríguez','Cava','95322222');
+
+insert into Aparatos values
+(1,'Banco','Bueno'),
+(2,'Pesa','Malo'),
+(3,'Colchón','Nuevo'),
+(4,'Barra','Bueno'),
+(5,'Banco','Nuevo'),
+(6,'Pesa','Nuevo');
+
+insert into Salas values
+(1,10,'Planta 1','Cardio'),
+(2,20,'Planta 1','Aerobi'),
+(3,25,'Planta 1','Aerobi'),
+(4,10,'Planta 2','Sauna'),
+(5,10,'Planta 2','Masaje'),
+(6,15,'Planta 2','Cardio');
+
+insert into Clases values
+(1,'Aerobic','9:00:00'),
+(2,'Aerobic','10:00:00',hal),
+(5,'Aerobic','14:00:00'),
+(3,'Step','20:00:00'),
+(4,'Spining','21:00:00');
+
+insert into Tienen values
+(4,4),(5,5),(2,1),(3,2),(3,3),(6,6);
+
+insert into Se_Imparten values
+(2,1),(2,2),(3,3),(3,4),(3,5);
+
+insert into Son_Impartidas values
+(1,11),(2,22),(3,33),(4,22),(5,33);
+
+insert into Asisten values
+(1,1),(1,5),(2,2),(3,4),(3,5),(4,3),(5,3),(6,3),(7,1),(7,5),(7,2),(8,4),(8,5);
